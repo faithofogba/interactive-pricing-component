@@ -14,7 +14,7 @@ h1 {
   background-image: url("./images/pattern-circles.svg");
   background-repeat: no-repeat;
   background-position: center;
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -34,14 +34,14 @@ h1 {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 7px;
-  height: 360px;
+  height: 370px;
   width: 500px;
   margin: auto;
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 
 .card--body {
-  padding: 30px 40px;
+  padding: 40px 40px;
 }
 
 .card p {
@@ -52,6 +52,7 @@ h1 {
 .package--details {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .previews {
@@ -75,7 +76,7 @@ h1 {
   display: none;
 }
 
-.package--range {
+#package--range {
   display: flex;
   align-items: center;
   font-size: 12px;
@@ -173,16 +174,21 @@ h1 {
 
   .card--body {
       text-align: center;
+      padding: 30px 40px;
   }
 
   .card--footer .items {
       display: grid;
       padding: 10px 40px;
-      justify-content: center;
+      text-align: center;
   }
 
   .heading--text h1 {
       font-size: 18px;
+  }
+
+  .items{
+    justify-content: center;
   }
 
   .package--amount{

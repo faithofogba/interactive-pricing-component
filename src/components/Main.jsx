@@ -3,13 +3,13 @@ import React from "react";
 export default function Main() {
   var price = "";
   var pageviewVal = "";
-  const [value, setValue] = React.useState("600000");
+  const [value, setValue] = React.useState("6");
   const [isYearly, setIsYearly] = React.useState(false);
   const sliderVal = {
-    min: 200000,
-    max: 1000000,
-    value: 600000,
-    step: 200000,
+    min: 2,
+    max: 10,
+    value: 6,
+    step: 2,
   };
 
   const handleSliderChange = (e) => {
@@ -20,37 +20,38 @@ export default function Main() {
     setIsYearly(!isYearly);
   };
 
-  if (value === "200000") {
+  if (value === "2") {
     pageviewVal = '10K'
     price = isYearly ? 8 * 12 * 0.25 : 8;
-  } else if (value === "400000") {
+  } else if (value === "4") {
     pageviewVal = '50K'
     price = isYearly ? 12 * 12 * 0.25 : 12;
-  } else if (value === "600000") {
+  } else if (value === "6") {
     pageviewVal = '100K'
     price = isYearly ? 16 * 12 * 0.25 : 16;
-  } else if (value === "800000") {
+  } else if (value === "8") {
     pageviewVal = '500K'
     price = isYearly ? 24 * 12 * 0.25 : 24;
-  } else if (value === "1000000") {
+  } else if (value === "10") {
     pageviewVal = '1M'
     price = isYearly ? 36 * 12 * 0.25 : 36;
   }
 
   return (
-    <div className="card">
+    <main className="card">
       <div className="card--body">
         <div className="package--details">
-          <p className="previews">{pageviewVal} PAGEVIEWS</p>
-          <p className="package--amount">
-            <strong className="value">${price}</strong>
+          <span className="previews">{pageviewVal} PAGEVIEWS</span>
+          <span className="package--amount">
+            <strong className="value">${price}.00</strong>
             <sup>{!isYearly ? "/month" : "/annum"}</sup>
-          </p>
+          </span>
         </div>
         <div className="slidecontainer">
           <input
             {...sliderVal}
             type="range"
+            aria-label="slider"
             className="slider"
             value={value}
             id="myRange"
@@ -64,13 +65,13 @@ export default function Main() {
           />
         </div>
         <p className="package--amount-mv">
-          <strong className="value">${price}</strong>
+          <strong className="value">${price}.00</strong>
           <sup>{!isYearly ? "/month" : "/annum"}</sup>
         </p>
-        <div className="package--range">
+        <div id="package--range">
           <div className="monthly--package">Monthly Billing</div>
           <label className="switch" checked={isYearly} onChange={onToggle}>
-            <input type="checkbox" />
+            <input aria-labelledby="package--range" type="checkbox" />
             <span className="toggle--slider round"></span>
           </label>
           <div className="yearly--package">Yearly Billing</div>
@@ -94,6 +95,6 @@ export default function Main() {
           <button className="btn">Start my trial</button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

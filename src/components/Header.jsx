@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div className="heading">
+    <header className="heading">
       <div className="heading--text">
         <h1>Simple, traffic-based pricing</h1>
         <p className="sub--heading">
@@ -13,6 +13,6 @@ export default function Header() {
           No credit card required.
         </p>
       </div>
-    </div>
+    </header>
   );
 }
